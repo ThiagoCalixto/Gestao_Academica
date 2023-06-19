@@ -1,0 +1,34 @@
+Contribuição para o Sistema de Gestão Acadêmica+
+
+Agradecemos seu interesse em contribuir para o desenvolvimento do Sistema de Gestão Acadêmica+. Sua contribuição é valiosa para melhorar o sistema e atender às necessidades das instituições de ensino superior.
+
+Processo de Contribuição
+Para contribuir com o projeto, siga as etapas abaixo:
+1.  Verifique se há problemas (issues) abertos relacionados à sua contribuição. Caso exista, verifique se alguém já está trabalhando nisso ou se você deseja assumir a tarefa.
+2.  Se desejar contribuir com uma nova funcionalidade, verifique se ela está alinhada com os objetivos do sistema. Se necessário, abra uma nova issue para discutir sua proposta antes de iniciar o trabalho.
+3.  Faça um fork do repositório do Sistema de Gestão Acadêmica+ para o seu próprio perfil.
+4.  Crie um branch em seu fork com um nome descritivo para a sua contribuição.
+5.  Implemente as alterações e adições necessárias em seu branch.
+6.  Certifique-se de seguir as diretrizes de estilo de código e boas práticas de programação do projeto.
+7.  Realize testes para garantir que suas alterações funcionem corretamente e não causem problemas.
+8.  Documente suas alterações, se necessário, atualizando a documentação existente ou criando nova documentação, conforme apropriado.
+9.  Envie um pull request para o repositório principal do Sistema de Gestão Acadêmica+.
+10.  Aguarde o feedback da equipe de desenvolvimento. Estaremos revisando suas alterações e fornecendo comentários para ajudar a melhorar o código.
+11.  Faça as alterações adicionais solicitadas, se necessário, até que seu pull request seja aprovado.
+12.  Uma vez que seu pull request seja aceito e mesclado ao repositório principal, suas contribuições serão incluídas no sistema oficial.
+
+Diretrizes de Contribuição
+Ao contribuir para o Sistema de Gestão Acadêmica+, siga as seguintes diretrizes:
+*  Mantenha um ambiente colaborativo e respeitoso. Seja cortês e aberto a diferentes opiniões e perspectivas.
+*  Certifique-se de que suas alterações sejam relevantes e estejam alinhadas com os objetivos do projeto.
+*  Escreva um código limpo e de fácil compreensão. Siga as convenções de nomenclatura e estilo de código estabelecidas.
+*  Documente suas alterações de forma clara e concisa, se necessário, para facilitar a compreensão por parte de outros colaboradores.
+*  Garanta que suas alterações não introduzam bugs ou erros no sistema existente. Realize testes adequados para verificar a funcionalidade.
+*  Seja receptivo ao feedback e esteja disposto a fazer alterações e melhorias com base nas sugestões da equipe de desenvolvimento.
+
+Código de Conduta
+Todos os contribuidores do Sistema de Gestão Acadêmica+ devem aderir ao Código de Conduta do projeto. Encorajamos um ambiente inclusivo, respeitoso e livre de discriminação. Para mais detalhes, consulte o arquivo CODE_OF_CONDUCT.md.
+
+Agradecemos antecipadamente suas contribuições para tornar o Sistema de Gestão Acadêmica+ ainda melhor!
+
+Equipe de Desenvolvimento do Sistema de Gestão Acadêmica+
