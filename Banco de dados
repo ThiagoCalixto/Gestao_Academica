@@ -1,8 +1,13 @@
+
 -- ####################################################################
 -- # Basic CREATE DATABASE statement
 -- # See https://www.ibm.com/docs/en/db2-for-zos/13?topic=statements-create-database for complete syntax.
 -- ####################################################################
-use Gestao_Academica;
+CREATE DATABASE database-name
+  BUFFERPOOL bpname
+  INDEXBP bpname
+  STOGROUP stogroup-name
+  CCSID ccsid-value Gestao_Academica;
   -- Inserir dados na tabela Aluno
 INSERT INTO Aluno (nome, data_nascimento, sexo, endereco)
 VALUES ('João Silva', '1990-05-10', 'Masculino', 'Rua das Flores, 123'),
