@@ -1,0 +1,93 @@
+-- Tabela Aluno
+CREATE TABLE Aluno (
+  aluno_id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(255),
+  data_nascimento DATE,
+  sexo VARCHAR(10),
+  endereco VARCHAR(255)
+);
+
+-- Tabela Campus
+CREATE TABLE Campus (
+  campus_id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(255),
+  endereco VARCHAR(255),
+  telefone VARCHAR(20)
+);
+
+-- Tabela Curso
+CREATE TABLE Curso (
+  curso_id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(255),
+  duracao VARCHAR(20),
+  descricao TEXT
+);
+
+-- Tabela Disciplina
+CREATE TABLE Disciplina (
+  disciplina_id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(255),
+  codigo VARCHAR(20),
+  carga_horaria INT
+);
+
+-- Tabela Instituicao
+CREATE TABLE Instituicao (
+  instituicao_id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(255),
+  endereco VARCHAR(255),
+  telefone VARCHAR(20)
+);
+
+-- Tabela Matricula
+CREATE TABLE Matricula (
+  matricula_id INT PRIMARY KEY AUTO_INCREMENT,
+  aluno_id INT,
+  curso_id INT,
+  data_matricula DATE,
+  FOREIGN KEY (aluno_id) REFERENCES Aluno(aluno_id),
+  FOREIGN KEY (curso_id) REFERENCES Curso(curso_id)
+);
+
+-- Tabela MatriculaCampus
+CREATE TABLE MatriculaCampus (
+  matriculacampus_id INT PRIMARY KEY AUTO_INCREMENT,
+  matricula_id INT,
+  campus_id INT,
+  FOREIGN KEY (matricula_id) REFERENCES Matricula(matricula_id),
+  FOREIGN KEY (campus_id) REFERENCES Campus(campus_id)
+);
+
+-- Tabela MatriculaCurso
+CREATE TABLE MatriculaCurso (
+  matriculacurso_id INT PRIMARY KEY AUTO_INCREMENT,
+  matricula_id INT,
+  curso_id INT,
+  FOREIGN KEY (matricula_id) REFERENCES Matricula(matricula_id),
+  FOREIGN KEY (curso_id) REFERENCES Curso(curso_id)
+);
+
+-- Tabela Professor
+CREATE TABLE Professor (
+  professor_id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(255),
+  especializacao VARCHAR(255),
+  email VARCHAR(255)
+);
+
+-- Tabela Turma
+CREATE TABLE Turma (
+  turma_id INT PRIMARY KEY AUTO_INCREMENT,
+  curso_id INT,
+  professor_id INT,
+  disciplina_id INT,
+  campus_id INT,
+  semestre INT,
+  ano INT,
+  FOREIGN KEY (curso_id) REFERENCES Curso(curso_id),
+  FOREIGN KEY (professor_id) REFERENCES Professor(professor_id),
+  FOREIGN KEY (disciplina_id) REFERENCES Disciplina(disciplina_id),
+  FOREIGN KEY (campus_id) REFERENCES Campus(campus_id)
+);
+
+
