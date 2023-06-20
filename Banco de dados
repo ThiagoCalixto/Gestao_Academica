@@ -2,101 +2,66 @@
 -- # Basic CREATE DATABASE statement
 -- # See https://www.ibm.com/docs/en/db2-for-zos/13?topic=statements-create-database for complete syntax.
 -- ####################################################################
-CREATE DATABASE Gestao_Academica;
-  BUFFERPOOL bpname
-  INDEXBP bpname
-  STOGROUP stogroup-name
-  CCSID ccsid-value
--- Tabela Aluno
-CREATE TABLE Aluno (
-  aluno_id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(255),
-  data_nascimento DATE,
-  sexo VARCHAR(10),
-  endereco VARCHAR(255)
-);
+use Gestao_Academica;
+  -- Inserir dados na tabela Aluno
+INSERT INTO Aluno (nome, data_nascimento, sexo, endereco)
+VALUES ('João Silva', '1990-05-10', 'Masculino', 'Rua das Flores, 123'),
+       ('Maria Santos', '1992-08-15', 'Feminino', 'Avenida Central, 456'),
+       ('Pedro Oliveira', '1995-02-20', 'Masculino', 'Travessa das Palmeiras, 789'),
+       ('Ana Rodrigues', '1993-11-28', 'Feminino', 'Rua dos Lírios, 321'),
+       ('Lucas Costa', '1991-07-03', 'Masculino', 'Avenida Principal, 987');
 
--- Tabela Campus
-CREATE TABLE Campus (
-  campus_id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(255),
-  endereco VARCHAR(255),
-  telefone VARCHAR(20)
-);
+-- Inserir dados na tabela Campus
+INSERT INTO Campus (nome, endereco, telefone)
+VALUES ('Campus A', 'Rua A, 123', '123456789'),
+       ('Campus B', 'Avenida B, 456', '987654321'),
+       ('Campus C', 'Travessa C, 789', '456123789');
 
--- Tabela Curso
-CREATE TABLE Curso (
-  curso_id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(255),
-  duracao VARCHAR(20),
-  descricao TEXT
-);
+-- Inserir dados na tabela Curso
+INSERT INTO Curso (nome, duracao, descricao)
+VALUES ('Engenharia Civil', '5 anos', 'Curso de Engenharia Civil'),
+       ('Administração', '4 anos', 'Curso de Administração'),
+       ('Ciência da Computação', '4 anos', 'Curso de Ciência da Computação');
 
--- Tabela Disciplina
-CREATE TABLE Disciplina (
-  disciplina_id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(255),
-  codigo VARCHAR(20),
-  carga_horaria INT
-);
+-- Inserir dados na tabela Disciplina
+INSERT INTO Disciplina (nome, codigo, carga_horaria)
+VALUES ('Cálculo I', 'CALC001', 80),
+       ('Economia', 'ECO001', 60),
+       ('Programação I', 'PROG001', 90);
 
--- Tabela Instituicao
-CREATE TABLE Instituicao (
-  instituicao_id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(255),
-  endereco VARCHAR(255),
-  telefone VARCHAR(20)
-);
+-- Inserir dados na tabela Instituicao
+INSERT INTO Instituicao (nome, endereco, telefone)
+VALUES ('Universidade XYZ', 'Rua XYZ, 789', '789123456');
 
--- Tabela Matricula
-CREATE TABLE Matricula (
-  matricula_id INT PRIMARY KEY AUTO_INCREMENT,
-  aluno_id INT,
-  curso_id INT,
-  data_matricula DATE,
-  FOREIGN KEY (aluno_id) REFERENCES Aluno(aluno_id),
-  FOREIGN KEY (curso_id) REFERENCES Curso(curso_id)
-);
+-- Inserir dados na tabela Matricula
+INSERT INTO Matricula (aluno_id, curso_id, data_matricula)
+VALUES (1, 1, '2022-01-01'),
+       (2, 2, '2022-02-15'),
+       (3, 1, '2022-03-20'),
+       (4, 3, '2022-04-10'),
+       (5, 2, '2022-05-05');
 
--- Tabela MatriculaCampus
-CREATE TABLE MatriculaCampus (
-  matriculacampus_id INT PRIMARY KEY AUTO_INCREMENT,
-  matricula_id INT,
-  campus_id INT,
-  FOREIGN KEY (matricula_id) REFERENCES Matricula(matricula_id),
-  FOREIGN KEY (campus_id) REFERENCES Campus(campus_id)
-);
+-- Inserir dados na tabela MatriculaCampus
+INSERT INTO MatriculaCampus (matricula_id, campus_id)
+VALUES (1, 1),
+       (2, 2),
+       (3, 1),
+       (4, 3),
+       (5, 2);
 
--- Tabela MatriculaCurso
-CREATE TABLE MatriculaCurso (
-  matriculacurso_id INT PRIMARY KEY AUTO_INCREMENT,
-  matricula_id INT,
-  curso_id INT,
-  FOREIGN KEY (matricula_id) REFERENCES Matricula(matricula_id),
-  FOREIGN KEY (curso_id) REFERENCES Curso(curso_id)
-);
+-- Inserir dados na tabela MatriculaCurso
+INSERT INTO MatriculaCurso (matricula_id, curso_id)
+VALUES (1, 1),
+       (2, 2),
+       (3, 1),
+       (4, 3),
+       (5, 2);
 
--- Tabela Professor
-CREATE TABLE Professor (
-  professor_id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(255),
-  especializacao VARCHAR(255),
-  email VARCHAR(255)
-);
+-- Inserir dados na tabela Professor
+INSERT INTO Professor (nome, especializacao, email)
+VALUES ('Carlos Ferreira', 'Engenharia Civil', 'carlos@email.com'),
+       ('Laura Santos', 'Administração', 'laura@email.com');
 
--- Tabela Turma
-CREATE TABLE Turma (
-  turma_id INT PRIMARY KEY AUTO_INCREMENT,
-  curso_id INT,
-  professor_id INT,
-  disciplina_id INT,
-  campus_id INT,
-  semestre INT,
-  ano INT,
-  FOREIGN KEY (curso_id) REFERENCES Curso(curso_id),
-  FOREIGN KEY (professor_id) REFERENCES Professor(professor_id),
-  FOREIGN KEY (disciplina_id) REFERENCES Disciplina(disciplina_id),
-  FOREIGN KEY (campus_id) REFERENCES Campus(campus_id)
-);
-
-
+-- Inserir dados na tabela Turma
+INSERT INTO Turma (curso_id, professor_id, disciplina_id, campus_id, semestre, ano)
+VALUES (1, 1, 1, 1, 
